@@ -1,49 +1,56 @@
 # MS 2 - rpcadastro -
-Este é o segundo microserviço de teste e será consumido pelo primeiro ms. RP testing with Spring Boot Java microservice and entities with Mysql database.
+This is an example test of a second microservice API (RPCADASTRO) that will be consumed by a first microservice via rest json. This example was made with Spring Boot Java.
 
 ## Spring Boot - Maven
-Esse projeto ilustra a estrutura gerada em Spring Initializr, através da utilização do arquétipo  do Maven utilizando o JDK17.
+This project illustrates the structure generated in Spring Initializr, through the use of the Maven archetype and JDK17.
+
 
 ## Getting started
 
-Para executar o projeto, será necessário instalar os seguintes programas:
+To run the project, you will need to install the following programs:
+- [JDK 17: Required to run the Java project](https://download.oracle.com/java/17/archive/jdk-17_windows-x64_bin.exe)
+- [Maven 3.9.6: Required to build the Java project](https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.6/apache-maven-3.9.6-bin.zip)
+- [Mysql: Required to access data base ](https://www.mysql.com/downloads/)
+- Intellij or Eclipse: For project development.
 
-- [JDK 17: Necessário para executar o projeto Java](https://download.oracle.com/java/17/archive/jdk-17_windows-x64_bin.exe)
-- [Maven 3.9.6: Necessário para realizar o build do projeto Java](https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.6/apache-maven-3.9.6-bin.zip)
-- Intellij ou Eclipse: Para desenvolvimento do projeto
 
+## Development
 
-## Desenvolvimento
-
-Para iniciar o desenvolvimento, é necessário clonar o projeto do GitHub num diretório de sua preferência:
-
+To start development, you need to clone the GitHub project into a directory of your choice:
 ```shell
-cd "diretorio de sua preferencia"
+cd "directory of your preference"
 git clone https://github.com/mpazin/rpcadastro
 ```
 
 
 ## Build
 
-Para construir o projeto com o Maven, executar os comando abaixo:
-
+To build the project with Maven, run the commands below:
 ```shell
 mvn clean install
 ```
 
-O comando irá baixar todas as dependências do projeto e criar um diretório *target* com os artefatos construídos, que incluem o arquivo jar do projeto. O Maven exibirá essas informação no console.
-
+The command will download all project dependencies and create a *target* directory with the built artifacts, which include the project jar file. Maven will display this information in the console.
 
 ## Features
 
-O projeto pode ser usado como modelo para iniciar o desenvolvimento de um projeto Java usando o Maven. Ele também demonstra de forma prática como configurar o Maven em um projeto Java.
-
+This is a test example of an API for an operations service in a financial wallet. It must be consumed by micro service 1 (RPCARTEIRA). The API receives the request for the specific operation, executes the business rules, accesses the database and returns the updated information to micro service 2 (RPCARTEIRA).
+#### Available operations:
+- Account and Wallet registration;
+- Account balance query;
+- Deposit of Amount into the Wallet;
+- Withdrawal of Amount from Wallet;
+- Transfer of Amount between Wallets;
+- Querying balance history by date;
+- Save transaction history
+- Save wallet log
 
 ## Configuration
 
 To run the project, you need to use Intellij, so that it identifies the dependencies required for execution in the *Maven .m2 repository*. Once the project is imported, a *.classpath* file
-will be created that will inform which is the main class for execution. The project must run locally and add the environment variable *SPRING_PROFILES_ACTIVE=local*. This microservice is 
+will be created that will inform which is the main class for execution. The project must run locally and add the environment variable *SPRING_PROFILES_ACTIVE=local*. This microservice is
 already configured to run locally with *port 8090* in the *application.yaml* file.
+The dllScriptDataBase folder located at the root of the project contains the ddl script for executing the creation of the database in MySql and a simple technical drawing of the services.
 
 ## Contact
 - LinkedIn: https://www.linkedin.com/in/marcio-pazin-ab178523/
